@@ -1,0 +1,15 @@
+body{
+  background-color: pink;
+}
+
+h1{
+  color: #a29bfe;
+}
+
+.clicked{
+  color: black;
+}
+
+.btn{
+  cursor: pointer;
+}
