@@ -6,10 +6,19 @@ h1{
   color: #a29bfe;
 }
 
-.clicked{
-  color: black;
+.js-title{
+  color:#6c5ce7;
 }
 
-.btn{
-  cursor: pointer;
+.form,
+.h4{
+  display: none;
+}
+
+.showing{
+  display: block;
+}
+
+.clicked{
+  color: #ff7675;
 }

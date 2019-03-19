@@ -1,4 +1,4 @@
-const title=document.querySelector("#title");
+const title=document.querySelector(".js-title");
 
 const CLICKED_CLASS="clicked";
 
@@ -13,9 +13,10 @@ function handleClick(){
   }
   */
 
-  //클래스가 없으면 add, 있으면 remove 
+  //클래스가 없으면 add, 있으면 remove
   title.classList.toggle(CLICKED_CLASS);
 }
+
 function init(){
   title.addEventListener("click",handleClick);
 }
