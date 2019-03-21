@@ -5,15 +5,25 @@ const toDoList=document.querySelector(".js-toDoList");
 const TODO_LS='todo';
 const TOCO_CN='showingtodo';
 
+let toDos=[];
+
 function saveTodo(){
   localStorage.setItem(TODO_LS,JSON.stringify(toDos));
 }
 
-function handleDelete(li){
-
+function deleteTodo(event){
+  const li=event.target.parentNode;
+  toDoList.removeChild(li);
+  //이 위에까지 하면 todo 가 새로고침 후 안지워짐
+  const cleantoDos=toDos.filter(function(toDos){
+    return toDos.id !== parseInt(li.id);
+  })
+  console.log(cleantoDos);
+  toDos=cleantoDos;
+  saveTodo();
 }
 
-const toDos=[];
+
 
 function showTodo(text){
   const li=document.createElement("li");
@@ -22,7 +32,7 @@ function showTodo(text){
   const newId=toDos.length+1;
 
   deleteBtn.innerText="✕";
-  deleteBtn.addEventListener("click",handleDelete(li));
+  deleteBtn.addEventListener("click",deleteTodo);
   span.innerText=text;
   li.appendChild(span);
   li.appendChild(deleteBtn);
