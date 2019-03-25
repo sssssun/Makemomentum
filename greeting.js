@@ -39,6 +39,7 @@ function loadName(){
     greetingUser(currentUser);
   }
 }
+
 function init(){
   loadName();
 }
