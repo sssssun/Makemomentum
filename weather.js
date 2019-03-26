@@ -2,14 +2,18 @@ const COORDS="coords";
 const API_KEY="ea2577bd25bb28385fd4ef136baed41f";
 //api: 다른 서버로부터 데이터를 손쉽게 가져올 수 있는 수단
 //특정 웹사이트로부터 데이터를 얻거나 컴퓨터끼리의 소통을 돕는다
+const weather=document.querySelector(".js-weather");
 
 function getWeather(lat,lon){
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
   ).then(function(response){
     return response.json()
   }).then(function(json){
     console.log(json);
+    const temperature=json.main.temp;
+    const location=json.name;
+    weather.innerText=`${location}, ${temperature}°C`;
   });
 }
 

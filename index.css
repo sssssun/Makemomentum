@@ -5,15 +5,19 @@ body{
 
 h1{
   color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .js-title{
   font-size: 45px;
   color:#ff7675;
+  margin-top: 100px;
 }
 
 .js-clock{
   font-size: 40px;
+
 }
 
 .form,
@@ -40,6 +44,7 @@ h1{
 .js-toDoList li{
   line-height: 1.5;
   font-size: 30px;
+
 }
 
 .clicked{
@@ -51,7 +56,7 @@ h1{
     opacity: 0;
   }
   to{
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -63,4 +68,12 @@ h1{
   left: 0;
   z-index: -1;
   animation: fadeIn 0.5s linear;
+}
+
+.js-weather{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top:15px;
 }
